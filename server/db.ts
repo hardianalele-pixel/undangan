@@ -6,8 +6,8 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const DATA_DIR = path.resolve(__dirname, '..', 'data');
-const DB_PATH = path.join(DATA_DIR, 'lathe.db');
+const DATA_DIR = process.env.DATA_DIR || (process.env.VERCEL ? path.join("/tmp", "lathe-invite-data") : path.resolve(__dirname, "..", "data"));
+const DB_PATH = process.env.DATABASE_PATH || path.join(DATA_DIR, "lathe.db");
 
 fs.mkdirSync(DATA_DIR, { recursive: true });
 fs.mkdirSync(path.join(DATA_DIR, 'uploads', 'signatures'), { recursive: true });

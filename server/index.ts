@@ -50,10 +50,12 @@ if (process.env.NODE_ENV === 'production') {
     });
 }
 
-// ─── Start Server ───────────────────────────────────────────────
-app.listen(PORT, () => {
-    console.log(`🚀 Lathe Invite API running on http://localhost:${PORT}`);
-    console.log(`📁 Uploads served from ${path.join(DATA_DIR, 'uploads')}`);
-});
+// Start Server
+if (!process.env.VERCEL) {
+    app.listen(PORT, () => {
+        console.log("Lathe Invite API running on http://localhost:" + PORT);
+        console.log("Uploads served from " + path.join(DATA_DIR, "uploads"));
+    });
+}
 
 export default app;
