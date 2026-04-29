@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+/* 
+ * Define default theme literal mappings so Tailwind generates 
+ * classes like bg-lathe-ink and text-lathe-surface natively. 
+ */
+@theme {
+  --color-lathe-yellow: #FFE500;
+  --color-lathe-ink: #1A1A1A;
+  --color-lathe-surface: #F5F5F0;
+  --color-lathe-secondary: #0047AB;
+}
+
+/* IDE might warn about @custom-variant, this is completely normal for Tailwind v4 */
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.theme-elegant {
+  --color-lathe-yellow: #D4AF37;
+  --color-lathe-ink: #2C2418;
+  --color-lathe-surface: #FAF8F3;
+  --color-lathe-secondary: #8B7355;
+}
+
+.theme-catppuccin-latte {
+  --color-lathe-yellow: #df8e1d;
+  --color-lathe-ink: #4c4f69;
+  --color-lathe-surface: #eff1f5;
+  --color-lathe-secondary: #1e66f5;
+}
+
+.theme-catppuccin-mocha {
+  --color-lathe-yellow: #f9e2af;
+  --color-lathe-ink: #cdd6f4;
+  --color-lathe-surface: #1e1e2e;
+  --color-lathe-secondary: #89b4fa;
+}
+
+.theme-nord {
+  --color-lathe-yellow: #ebcb8b;
+  --color-lathe-ink: #eceff4;
+  --color-lathe-surface: #2e3440;
+  --color-lathe-secondary: #81a1c1;
+}
+
+.theme-rose-pine {
+  --color-lathe-yellow: #f6c177;
+  --color-lathe-ink: #e0def4;
+  --color-lathe-surface: #191724;
+  --color-lathe-secondary: #9ccfd8;
+}
+
+.theme-terracotta {
+  --color-lathe-yellow: #C35B3C;
+  --color-lathe-ink: #4A3525;
+  --color-lathe-surface: #FDFBF7;
+  --color-lathe-secondary: #8F5B36;
+}
+
+.theme-sage {
+  --color-lathe-yellow: #8A9A86;
+  --color-lathe-ink: #2C3B2E;
+  --color-lathe-surface: #F9FAF8;
+  --color-lathe-secondary: #A3B19B;
+}
+
+.theme-autumn {
+  --color-lathe-yellow: #C97B3D;
+  --color-lathe-ink: #3D2E1E;
+  --color-lathe-surface: #FBF5EB;
+  --color-lathe-secondary: #A67B4F;
+}
+
+.theme-pastel {
+  --color-lathe-yellow: #D4A0A0;
+  --color-lathe-ink: #4A3636;
+  --color-lathe-surface: #FFF5F5;
+  --color-lathe-secondary: #C4B0B0;
+}
+
+body {
+  background-color: var(--color-lathe-surface);
+  color: var(--color-lathe-ink);
+  font-family: var(--font-sans);
+}
+
+/* Custom utility for the strict border style */
+.lathe-border {
+  border: 1px solid var(--color-lathe-ink);
+}
+
+/* Custom utility for the active signal */
+.lathe-signal {
+  background-color: var(--color-lathe-yellow);
+}
+
+/* Custom utility for secondary territory marker */
+.lathe-marker {
+  border-left: 4px solid var(--color-lathe-secondary);
+}
