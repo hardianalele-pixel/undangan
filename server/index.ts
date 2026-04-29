@@ -2,18 +2,18 @@ import express from 'express';
 import cors from 'cors';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { DATA_DIR } from './db'; // This triggers migration on import
+import { DATA_DIR } from "./db.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-import authRoutes from './routes/auth';
-import invitationRoutes from './routes/invitations';
-import guestRoutes from './routes/guests';
-import checkinRoutes from './routes/checkin';
-import guestbookRoutes from './routes/guestbook';
-import uploadRoutes from './routes/upload';
-import billingRoutes from './routes/billing';
+import authRoutes from './routes/auth.ts';
+import invitationRoutes from './routes/invitations.ts';
+import guestRoutes from './routes/guests.ts';
+import checkinRoutes from './routes/checkin.ts';
+import guestbookRoutes from './routes/guestbook.ts';
+import uploadRoutes from './routes/upload.ts';
+import billingRoutes from './routes/billing.ts';
 
 const app = express();
 const PORT = parseInt(process.env.API_PORT || '3001');
@@ -24,7 +24,7 @@ app.use(express.json({ limit: '15mb', verify: (req: any, _res, buf) => { req.raw
 app.use(express.urlencoded({ extended: true }));
 
 // Serve uploaded files statically
-app.use('/uploads', express.static(path.join(DATA_DIR, 'uploads')));
+// app.use('/uploads', express.static(path.join(DATA_DIR, 'uploads')));
 
 // ─── API Routes ─────────────────────────────────────────────────
 app.use('/api/auth', authRoutes);

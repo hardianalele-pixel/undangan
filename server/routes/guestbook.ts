@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import { v4 as uuidv4 } from 'uuid';
-import db from '../db';
-import { sseManager } from '../sse';
-import { decodeBase64ToFile } from '../utils/assets';
+import db from '../db.ts';
+import { sseManager } from '../sse.ts';
+import { decodeBase64ToFile } from '../utils/assets.ts';
 
 const router = Router();
 

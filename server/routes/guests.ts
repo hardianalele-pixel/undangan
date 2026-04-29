@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import crypto from 'crypto';
-import db from '../db';
-import { requireAuth, AuthRequest } from '../middleware/auth';
+import db from '../db.ts';
+import { requireAuth, AuthRequest } from '../middleware/auth.ts';
 
 const router = Router();
 

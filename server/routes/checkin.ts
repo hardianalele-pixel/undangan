@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import db from '../db';
-import { sseManager } from '../sse';
+import db from '../db.ts';
+import { sseManager } from '../sse.ts';
 
 const router = Router();
 

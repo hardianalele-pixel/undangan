@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
-import { DATA_DIR } from '../db';
+import { DATA_DIR } from '../db.ts';
 
 /**
  * Decode a Base64-encoded image string and save it as a file.
